@@ -1,0 +1,17 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (in case serve is run locally)
+node_modules/
+package-lock.json
+
+# Env
+.env
