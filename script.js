@@ -5,7 +5,7 @@
 // ────────────────────────────────────────────
 //  🔑  PASTE YOUR OPENWEATHERMAP API KEY BELOW
 // ────────────────────────────────────────────
-const API_KEY = 'YOUR_API_KEY_HERE';
+const API_KEY = 'a8ee1ee1fa425a23ba449314070cd940';
 // ────────────────────────────────────────────
 //  Get a free key at: https://home.openweathermap.org/api_keys
 // ────────────────────────────────────────────
@@ -13,33 +13,33 @@ const API_KEY = 'YOUR_API_KEY_HERE';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 // --- DOM Elements ---
-const $  = (sel) => document.querySelector(sel);
+const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
 const dom = {
-  app:            $('#app'),
-  bgGradient:     $('#bgGradient'),
-  searchInput:    $('#searchInput'),
-  searchBtn:      $('#searchBtn'),
-  locationBtn:    $('#locationBtn'),
-  unitToggle:     $('#unitToggle'),
-  loading:        $('#loading'),
-  errorState:     $('#errorState'),
-  errorMessage:   $('#errorMessage'),
-  retryBtn:       $('#retryBtn'),
-  mainContent:    $('#mainContent'),
-  cityName:       $('#cityName'),
-  dateTime:       $('#dateTime'),
-  weatherIcon:    $('#weatherIcon'),
-  currentTemp:    $('#currentTemp'),
-  weatherDesc:    $('#weatherDesc'),
-  humidity:       $('#humidity'),
-  windSpeed:      $('#windSpeed'),
-  pressure:       $('#pressure'),
-  visibility:     $('#visibility'),
-  feelsLike:      $('#feelsLike'),
-  uvIndex:        $('#uvIndex'),
-  forecastGrid:   $('#forecastGrid'),
+  app: $('#app'),
+  bgGradient: $('#bgGradient'),
+  searchInput: $('#searchInput'),
+  searchBtn: $('#searchBtn'),
+  locationBtn: $('#locationBtn'),
+  unitToggle: $('#unitToggle'),
+  loading: $('#loading'),
+  errorState: $('#errorState'),
+  errorMessage: $('#errorMessage'),
+  retryBtn: $('#retryBtn'),
+  mainContent: $('#mainContent'),
+  cityName: $('#cityName'),
+  dateTime: $('#dateTime'),
+  weatherIcon: $('#weatherIcon'),
+  currentTemp: $('#currentTemp'),
+  weatherDesc: $('#weatherDesc'),
+  humidity: $('#humidity'),
+  windSpeed: $('#windSpeed'),
+  pressure: $('#pressure'),
+  visibility: $('#visibility'),
+  feelsLike: $('#feelsLike'),
+  uvIndex: $('#uvIndex'),
+  forecastGrid: $('#forecastGrid'),
 };
 
 // --- State ---
@@ -127,12 +127,12 @@ function renderCurrent(data) {
   dom.currentTemp.textContent = `${Math.round(main.temp)}${tempUnit()}`;
   dom.weatherDesc.textContent = w.description;
 
-  dom.humidity.textContent   = `${main.humidity}%`;
-  dom.windSpeed.textContent  = `${wind.speed} ${speedUnit()}`;
-  dom.pressure.textContent   = `${main.pressure} hPa`;
+  dom.humidity.textContent = `${main.humidity}%`;
+  dom.windSpeed.textContent = `${wind.speed} ${speedUnit()}`;
+  dom.pressure.textContent = `${main.pressure} hPa`;
   dom.visibility.textContent = `${(vis / 1000).toFixed(1)} km`;
-  dom.feelsLike.textContent  = `${Math.round(main.feels_like)}${tempUnit()}`;
-  dom.uvIndex.textContent    = `${formatTime(sys.sunrise, timezone)} / ${formatTime(sys.sunset, timezone)}`;
+  dom.feelsLike.textContent = `${Math.round(main.feels_like)}${tempUnit()}`;
+  dom.uvIndex.textContent = `${formatTime(sys.sunrise, timezone)} / ${formatTime(sys.sunset, timezone)}`;
 
   setBackground(w.id, w.icon);
 }
@@ -259,7 +259,7 @@ dom.locationBtn.addEventListener('click', () => {
   }
   navigator.geolocation.getCurrentPosition(
     (pos) => loadWeather({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
-    ()     => showError('Location access denied. Please search manually.'),
+    () => showError('Location access denied. Please search manually.'),
   );
 });
 
